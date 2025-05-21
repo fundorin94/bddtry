@@ -3,8 +3,8 @@ Feature: Location Features
   I want to interact with location features
   To verify content is displayed correctly
 
-  Background:
-    When I consent data usage
+  //Background:
+   // When I consent data usage
 
   Scenario: Display current location label
 

@@ -12,11 +12,11 @@ public class MainPageSteps {
     private final MainPage mainPage = new MainPage();
     private final AdHandler adHandler = new AdHandler();
 
-    @When("I consent data usage")
+    /*@When("I consent data usage")
     public void consentDataUsage() {
         step("Consent data usage");
         mainPage.clickConsentButton();
-    }
+    }*/
 
     @When("I input {string} in the search field")
     public void inputSearchQuery(String searchQuery) {
