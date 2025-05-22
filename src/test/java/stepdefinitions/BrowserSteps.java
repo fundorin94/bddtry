@@ -15,7 +15,7 @@ public class BrowserSteps {
         @When("I go back to the main page")
         public void goBackToMain() {
             step("Go back to the main page");
-            //fdhfd
+            //fdhfddfsf
             //I tried to use the ElementState.DISPLAYED, but test was failed, that is why Conditional Wait is used here
 
             AqualityServices.getConditionalWait().waitFor(cityWeatherPage::isCityWeatherPageDisplayed);
