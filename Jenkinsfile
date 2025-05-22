@@ -9,6 +9,9 @@ pipeline {
     environment {
         ALLURE_RESULTS = 'target/allure-results'
     }
+    triggers {
+        githubPush()
+    }
 
     stages {
         stage('Checkout') {
