@@ -2,13 +2,12 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven 3.9.6'   // Имя Maven в Jenkins (настраивается в Global Tool Configuration)
-        jdk 'JDK 17'          // Имя JDK, установленного в Jenkins
+        maven 'Maven 3.9.6'
+        jdk 'JDK 17'
     }
 
     environment {
         ALLURE_RESULTS = 'target/allure-results'
-        ALLURE_REPORT = 'allure-report'
     }
 
     stages {
@@ -31,6 +30,9 @@ pipeline {
         }
     }
 
-
+    post {
+        always {
+            archiveArtifacts artifacts: 'target/surefire-reports/*.xml', allowEmptyArchive: true
+        }
     }
 }
