@@ -9,7 +9,7 @@ import models.EnvData;
 public class EnvDataReader {
     private final String ENVIRONMENT_PATH = JsonReader.RESOURCES_PATH + "environment/";
     private final ISettingsFile ENVIRONMENT_CONFIG = new JsonSettingsFile("env.json");
-    //gfgfdgdfgd
+    //gfgfdgdfgdfgfd
     private String getCurrentEnvironment() {
         return ENVIRONMENT_CONFIG.getValue("/env").toString();
     }
