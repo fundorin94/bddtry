@@ -36,7 +36,7 @@ public class MainPage extends Form {
     }
 
     public void clickSearchField() {
-        searchField.click();
+        searchField.click(); //fgfd
     }
 
     public void inputSearchQuery(String query) {
