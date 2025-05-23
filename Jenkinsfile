@@ -9,6 +9,7 @@ pipeline {
     environment {
         ALLURE_RESULTS = 'target/allure-results'
     }
+
     triggers {
         githubPush()
     }
@@ -22,14 +23,16 @@ pipeline {
 
         stage('Build & Test') {
             steps {
-                bat 'mvn clean test'
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    bat 'mvn clean test'
+                }
             }
         }
 
-        stage('Build & Test') {
+        stage('Allure Report') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    bat 'mvn clean test'
+                    allure includeProperties: false, jdk: '', results: [[path: "${env.ALLURE_RESULTS}"]]
                 }
             }
         }
