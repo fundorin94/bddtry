@@ -25,7 +25,7 @@ public class Hooks {
 
     @After()
     public void teardown() {
-        step("Attach screenshot before quitting", ()->  attachScreenshot(););
+        step("Attach screenshot before quitting", ()->  attachScreenshot());
 
         step("Attach browser console logs");
         attachBrowserLogs(); // <-- Новая строка
