@@ -18,7 +18,7 @@ Feature: Location Features
     And I go back to the main page
     Then Main page is opened
     When I choose the first city in Recent locations
-    #And I close the Ad block
+    And I close the Ad block
     Then City weather page header contains city name "London" from the search
 
 

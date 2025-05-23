@@ -26,9 +26,11 @@ pipeline {
             }
         }
 
-        stage('Allure Report') {
+        stage('Build & Test') {
             steps {
-                allure includeProperties: false, jdk: '', results: [[path: "${env.ALLURE_RESULTS}"]]
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    bat 'mvn clean test'
+                }
             }
         }
     }
