@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.Then;
+import io.qameta.allure.Step;
 import org.testng.Assert;
 import pages.CityWeatherPage;
 import static io.qameta.allure.Allure.step;
